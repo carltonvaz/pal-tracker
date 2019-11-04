@@ -29,7 +29,7 @@ dependencies {
     testCompile("org.springframework.boot:spring-boot-starter-test:$springBootVersion")
 }
 bootRun.environment([
-        "WELCOME_MESSAGE": "hello",
+        "WELCOME_MESSAGE": "helloFROMBOOTRUN",
 ])
 
 test.environment([
