@@ -44,7 +44,7 @@ public class TimeEntryController {
     public ResponseEntity update(@PathVariable long timeEntryId, @RequestBody TimeEntry timeEntry) {
         TimeEntry updatedTimeEntry = timeEntryRepository.update(timeEntryId, timeEntry);
         HttpStatus status = (updatedTimeEntry == null)? HttpStatus.NOT_FOUND : HttpStatus.OK;
-        return new ResponseEntity<>(timeEntry, status);
+        return new ResponseEntity<>(updatedTimeEntry, status);
     }
 
     @DeleteMapping("time-entries/{timeEntryId}")

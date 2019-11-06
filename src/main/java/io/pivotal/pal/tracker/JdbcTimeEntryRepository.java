@@ -18,9 +18,6 @@ public class JdbcTimeEntryRepository implements TimeEntryRepository {
     private JdbcTemplate jdbcTemplate;
     private final String TABLE_NAME = "time_entries";
 
-    public JdbcTimeEntryRepository() {
-    }
-
     public JdbcTimeEntryRepository(DataSource dataSource){
         jdbcTemplate = new JdbcTemplate(dataSource);
     }
@@ -71,7 +68,8 @@ public class JdbcTimeEntryRepository implements TimeEntryRepository {
                 timeEntry.getHours(),
                 id);
 
-        return find(id);
+        TimeEntry timeEntry1 = find(id);
+        return timeEntry1;
     }
 
     @Override
